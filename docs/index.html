@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlazorApp</title>
+    <base href="/" />
+    <link href="_framework/dotnet.zt7o24dvfe.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-p5+DAj+/dZ8MpAkN4oFOMzyBniSXicEnKYX1++yKeI4=" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- If you add any scoped CSS files, uncomment the following to load them
+    <link href="BlazorApp.styles.css" rel="stylesheet" /> -->
+    <link href="manifest.webmanifest" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.66stpp682q.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.6cn61js7j8.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.q5rqv3xrhm.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.zt7o24dvfe.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.66stpp682q.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
+    "./_framework/blazor.webassembly.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
+    "./_framework/dotnet.js": "sha256-p5+DAj+/dZ8MpAkN4oFOMzyBniSXicEnKYX1++yKeI4=",
+    "./_framework/dotnet.native.6cn61js7j8.js": "sha256-pghlyMucTOUf+CGds+FUc4mgm9pgK08DgoK78/JMZfM=",
+    "./_framework/dotnet.native.js": "sha256-pghlyMucTOUf+CGds+FUc4mgm9pgK08DgoK78/JMZfM=",
+    "./_framework/dotnet.runtime.js": "sha256-ArknccFM1sHNVcih0x1h52AG+abNCoQjl6BlVrv3ePw=",
+    "./_framework/dotnet.runtime.q5rqv3xrhm.js": "sha256-ArknccFM1sHNVcih0x1h52AG+abNCoQjl6BlVrv3ePw=",
+    "./_framework/dotnet.zt7o24dvfe.js": "sha256-p5+DAj+/dZ8MpAkN4oFOMzyBniSXicEnKYX1++yKeI4="
+  }
+}</script>
+</head>
+
+<body>
+    <canvas id="starfield" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
+
+    <div id="app" style="position: relative; z-index: 1;">
+        <svg class="loading-progress">
+            <defs>
+                <linearGradient id="loadingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+    </div>
+
+    <div id="blazor-error-ui" style="position: relative; z-index: 2;">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script src="_framework/blazor.webassembly.66stpp682q.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' });</script>
+    <script src="js/starfield.js" defer></script>
+</body>
+
+</html>
