@@ -1,0 +1,66 @@
+﻿@using WasmApp.Services
+@inject ThemeService ThemeService
+
+<MudThemeProvider Theme="_theme" @bind-IsDarkMode="@ThemeService.IsDarkMode"/>
+<MudPopoverProvider/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<Router AppAssembly="@typeof(App).Assembly" NotFoundPage="typeof(Pages.NotFound)">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+</Router>
+
+@code {
+    protected override void OnInitialized()
+    {
+        ThemeService.OnChange += StateHasChanged;
+    }
+
+    private readonly MudTheme _theme = new()
+    {
+        PaletteLight = new PaletteLight()
+        {
+            Primary = "#6366f1",
+            Secondary = "#ec4899",
+            Background = "#d1d5db",
+            Surface = "#cbd5f5",
+            AppbarBackground = "rgba(15, 23, 42, 0.92)",
+            TextPrimary = "#0f172a",
+            TextSecondary = "#1e293b"
+        },
+        PaletteDark = new PaletteDark()
+        {
+            Primary = "#818cf8",
+            Secondary = "#f472b6",
+            Success = "#34d399",
+            Info = "#60a5fa",
+            Warning = "#fbbf24",
+            Background = "#0a0a0a",
+            BackgroundGray = "#0f0f0f",
+            Surface = "#121212",
+            DrawerBackground = "#0f0f0f",
+            AppbarBackground = "rgba(10, 10, 10, 0.0)",
+            AppbarText = "#e5e7eb",
+            TextPrimary = "#f3f4f6",
+            TextSecondary = "#d1d5db",
+            Dark = "#8C8C8C",
+            ActionDefault = "#9ca3af",
+            ActionDisabled = "#4b5563",
+            ActionDisabledBackground = "#1f2937",
+            Divider = "#374151",
+            DividerLight = "#1f2937",
+            TableLines = "#374151",
+            LinesDefault = "#374151",
+            LinesInputs = "#4b5563",
+            TextDisabled = "#6b7280"
+        }
+    };
+
+    public void Dispose()
+    {
+        ThemeService.OnChange -= StateHasChanged;
+    }
+}

@@ -1,0 +1,64 @@
+﻿@inherits LayoutComponentBase
+@using WasmApp.Services
+@inject ThemeService ThemeService
+@implements IDisposable
+
+<MudLayout Class="@LayoutThemeClass" Style="@GetLayoutStyle()">
+    <MudAppBar Elevation="0" Style="@GetAppBarStyle()">
+        <MudSpacer />
+        <MudStack AlignItems="AlignItems.Center" Spacing="2">
+        @* placeholder *@
+        </MudStack>
+        <MudSpacer />
+        <MudIconButton Icon="@(ThemeService.IsDarkMode ? @Icons.Material.Filled.LightMode : @Icons.Material.Filled.DarkMode)" 
+                       Color="@(ThemeService.IsDarkMode ? Color.Inherit : Color.Default)" 
+                       OnClick="@ThemeService.ToggleDarkMode" 
+                       Title="Toggle Light/Dark Mode" />
+    </MudAppBar>
+    <MudMainContent Style="@GetMainContentStyle()">
+        <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="pa-8">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    protected override void OnInitialized()
+    {
+        ThemeService.OnChange += StateHasChanged;
+    }
+
+    private string LayoutThemeClass => ThemeService.IsDarkMode ? "dark-theme" : "light-theme";
+
+    private string GetLayoutStyle()
+    {
+        if (ThemeService.IsDarkMode)
+        {
+            return "min-height: 100vh; background: transparent;";
+        }
+        return "min-height: 100vh; background-color: #f7f8fb;";
+    }
+
+    private string GetAppBarStyle()
+    {
+        if (ThemeService.IsDarkMode)
+        {
+            return "background: rgba(10, 10, 10, 0.3); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);";
+        }
+        return "background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);";
+    }
+
+    private string GetMainContentStyle()
+    {
+        if (ThemeService.IsDarkMode)
+        {
+            return "background: transparent; min-height: calc(100vh - 64px);";
+        }
+        return "background-color: #ffffff; min-height: calc(100vh - 64px);";
+    }
+
+    public void Dispose()
+    {
+        ThemeService.OnChange -= StateHasChanged;
+    }
+}

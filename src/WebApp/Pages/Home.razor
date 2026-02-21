@@ -1,0 +1,406 @@
+﻿@page "/"
+@using WasmApp.Services
+@inject ThemeService ThemeService
+@implements IDisposable
+
+<PageTitle>Welcome to Usefull AI</PageTitle>
+
+<MudStack Spacing="6" AlignItems="AlignItems.Center" Class="mt-8 page-enter">
+
+    <MudSpacer />
+    <MudStack AlignItems="AlignItems.Center" Spacing="2">
+        <MudImage Class="logo-shine" Size="Size.Large" Style="background: transparent; width: 80px; height: 80px;" Src="assets/PlottAI_Logo.png"></MudImage>
+        <MudText Typo="Typo.h2" Class="brand-name-shine" Style="margin-top:30px; font-family: 'Orbitron', sans-serif; font-weight: 900; letter-spacing: 2px; font-size: 3rem;">
+            Plott
+        </MudText>
+    </MudStack>
+    <MudSpacer />
+
+    <MudText Align="Align.Center" GutterBottom="true" Class="modern-text" Style="margin-top:-40px;margin-bottom:50px;font-size:15px;" Color="Color.Dark">
+        The AI that runs on your hardware. <br />
+        It gets to know you and get things done.
+    </MudText>
+
+    <MudDivider Class="my-8" Style="width: 70%;" />
+
+    <MudText Typo="Typo.h4" Align="Align.Center" Class="mb-8 modern-text" Color="Color.Dark" Style="margin-top:-20px;">
+        <span style="font-size:35px; font-weight:1000; color: mediumpurple;">⟩ </span>
+        <span style="@GetDescriptionTextColor() font-weight: 600;">THE AI THAT MAKES YOUR DAY BETTER</span>
+    </MudText>
+
+    <MudGrid Justify="Justify.Center" Class="mx-auto" Style="max-width: 960px;" AlignItems="AlignItems.Center" Spacing="3">
+        <MudItem xs="12" sm="6" md="4" Class="card-enter-1">
+        <MudPaper Elevation="3" Class="pa-4 feature-card" Style="@($"{GetCardStyle()} margin: 0 auto;")" MaxWidth="250px">
+                <MudStack AlignItems="AlignItems.Center" Spacing="2">
+                    <MudIcon Icon="@Icons.Material.Filled.Speed" Color="Color.Info" Size="Size.Large" />
+                    <MudText Typo="Typo.h6">Run Locally</MudText>
+                    <MudText Align="Align.Center" Class="modern-text feature-card-text">
+                        Use the power of your machine, no clouds, independent
+                    </MudText>
+                </MudStack>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="4" Class="card-enter-2">
+            <MudPaper Elevation="3" Class="pa-4 feature-card" Style="@($"{GetCardStyle()} margin: 0 auto;")" MaxWidth="250px">
+                <MudStack AlignItems="AlignItems.Center" Spacing="2">
+                    <MudIcon Icon="@Icons.Material.Filled.Security" Color="Color.Success" Size="Size.Large" />
+                    <MudText Typo="Typo.h6">Secured by Default</MudText>
+                    <MudText Align="Align.Center" Class="modern-text feature-card-text">
+                        Secure architecture by Default, governed by AI
+                    </MudText>
+                </MudStack>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="4" Class="card-enter-3">
+            <MudPaper Elevation="3" Class="pa-4 feature-card" Style="@($"{GetCardStyle()} margin: 0 auto;")" MaxWidth="250px">
+                <MudStack AlignItems="AlignItems.Center" Spacing="2">
+                    <MudIcon Icon="@Icons.Material.Filled.Code" Color="Color.Info" Size="Size.Large" />
+                    <MudText Typo="Typo.h6">Auto Code</MudText>
+                    <MudText Align="Align.Center" Class="modern-text feature-card-text">
+                        Agents that complete the missing pieces with self-generated code and CLI
+                    </MudText>
+                </MudStack>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="4" Class="card-enter-4">
+            <MudPaper Elevation="3" Class="pa-4 feature-card" Style="@($"{GetCardStyle()} margin: 0 auto;")" MaxWidth="250px">
+                <MudStack AlignItems="AlignItems.Center" Spacing="2">
+                    <MudIcon Icon="@Icons.Material.Filled.Grain" Color="Color.Info" Size="Size.Large" />
+                    <MudText Typo="Typo.h6">Local LLM</MudText>
+                    <MudText Align="Align.Center" Class="modern-text feature-card-text">
+                        Run AI entirely locally, no data shared with third parties
+                    </MudText>
+                </MudStack>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="4" Class="card-enter-5">
+            <MudPaper Elevation="3" Class="pa-4 feature-card" Style="@($"{GetCardStyle()} margin: 0 auto;")" MaxWidth="250px">
+                <MudStack AlignItems="AlignItems.Center" Spacing="2">
+                    <MudIcon Icon="@Icons.Material.Filled.ViewModule" Color="Color.Info" Size="Size.Large" />
+                    <MudText Typo="Typo.h6">Extensions</MudText>
+                    <MudText Align="Align.Center" Class="modern-text feature-card-text">
+                        Use existing extensions or let the AI generate missing ones
+                    </MudText>
+                </MudStack>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+
+    <MudStack Row="true" AlignItems="AlignItems.Center" Justify="Justify.Center" Spacing="2" Style="margin-top:25px;margin-bottom:-15px;">
+        <MudIcon Icon="@Icons.Custom.Brands.Telegram" Style="font-size: 1.4rem; color: #229ED9;" />
+        <MudText GutterBottom="true" Class="modern-text" Style="font-size:15px;" Color="Color.Dark">
+            Access the Plott AI wherever you are. Use Telegram messenger or the local app on your pc.
+        </MudText>
+    </MudStack>
+
+    <MudDivider Class="my-8" Style="width: 70%;" />
+
+    <MudText Typo="Typo.h4" Align="Align.Center" Class="mb-8 modern-text" Color="Color.Dark" Style="margin-top:-20px;">
+        <span style="font-size:35px; font-weight:1000; color: mediumpurple;">⟩ </span>
+        <span style="@GetDescriptionTextColor() font-weight: 600;">GET EMPOWERED TODAY</span>
+    </MudText>
+
+    <MudStack Row="true" AlignItems="AlignItems.Center" Style="margin-top:0px;margin-bottom:-20px;">
+
+        <MudChip T="string" Size="Size.Small">Private Use</MudChip>
+        <MudChip T="string" Size="Size.Small">Work</MudChip>
+        <MudChip T="string" Size="Size.Small">Embedded Pc</MudChip>
+    </MudStack>
+        
+    <MudPaper Elevation="2" Class="pa-6 code-section" Style="@GetCodeSectionStyle()">
+        <MudTabs Elevation="0" Rounded="true" Color="Color.Dark" Position="Position.Top" Border="true" PanelClass="pa-8">
+            <MudTabPanel Text="Windows" Icon="@Icons.Material.Filled.Window">
+                <MudStack AlignItems="AlignItems.Center" Spacing="6" Style="padding: 24px 0;">
+                    <MudIcon Icon="@Icons.Material.Filled.Window" Color="Color.Default" Style="font-size: 3rem; color: #1a1a2e;" />
+                    <MudText Typo="Typo.h6" Class="modern-text">Windows 11 Installation</MudText>
+                    <MudButton Variant="Variant.Outlined"
+                               Color="Color.Dark"
+                               Size="Size.Large"
+                               StartIcon="@Icons.Material.Filled.Download"
+                               OnClick="ShowComingSoonDialog">
+                        Download Package
+                    </MudButton>
+                </MudStack>
+            </MudTabPanel>
+
+            <MudTabPanel Text="Linux" Icon="@Icons.Material.Filled.Terminal" Disabled="true">
+                <MudStack AlignItems="AlignItems.Center" Spacing="6" Style="padding: 24px 0;">
+                    <MudIcon Icon="@Icons.Material.Filled.Terminal" Color="Color.Success" Style="font-size: 3rem;" />
+                    <MudText Typo="Typo.h6" Class="modern-text">Linux Installation</MudText>
+                    <MudText Align="Align.Center" Class="modern-text feature-card-text">
+                        Coming soon
+                    </MudText>
+                </MudStack>
+            </MudTabPanel>
+
+            <MudTabPanel Text="Mac" Icon="@Icons.Material.Filled.LaptopMac" Disabled="true">
+                <MudStack AlignItems="AlignItems.Center" Spacing="6" Style="padding: 24px 0;">
+                    <MudIcon Icon="@Icons.Material.Filled.LaptopMac" Color="Color.Info" Style="font-size: 3rem;" />
+                    <MudText Typo="Typo.h6" Class="modern-text">macOS Installation</MudText>
+                    <MudText Align="Align.Center" Class="modern-text feature-card-text">
+                        Coming soon
+                    </MudText>
+                </MudStack>
+            </MudTabPanel>
+        </MudTabs>
+    </MudPaper>
+
+    <MudText Align="Align.Center" GutterBottom="true" Class="modern-text" Style="margin-top:10px;margin-bottom:10px;font-size:22px;" Color="Color.Dark">
+        😍
+    </MudText>
+
+    <MudPaper Elevation="1" Class="pa-6" Style="@GetTermsStyle()">
+        <MudText Typo="Typo.h6" Class="mb-2" Style="@GetTermsTitleStyle()">Plott AI – Software Terms &amp; Licensing</MudText>
+        <MudText Align="Align.Left" Class="modern-text" Style="@($"{GetTermsTextStyle()} font-size:13px;")">
+            Plott is a novel, experimental agent system provided "as-is" without any warranty. By using this software, you accept all risks regarding data loss, security exposures, or unintended consequences.
+        </MudText>
+        <MudText Align="Align.Left" Class="modern-text" Style="@($"{GetTermsTextStyle()} font-size:13px;")">
+            This license is strictly for internal evaluation only. Redistribution, modification, resale, or third-party deployment is prohibited without explicit written permission. You are solely responsible for compliance with applicable laws.
+        </MudText>
+        <MudText Align="Align.Left" Class="modern-text" Style="@($"{GetTermsTextStyle()} font-size:13px;")">
+            In no event shall the authors be liable for any damages, losses, or misuse arising from the software. Use Plott at your own risk.
+        </MudText>
+    </MudPaper>
+
+    <MudDivider Class="my-8" Style="width: 70%;" />
+
+    <MudText Align="Align.Center" Class="mb-8" Typo="Typo.caption" Style="@GetCopyrightStyle()">
+        © @DateTime.Now.Year Plott. All rights reserved. 
+        <span style="font-size:20px; font-weight:300; margin-left:5px;margin-right:5px; "> | </span>
+        <a href="mailto:info@plottai.com" style="@GetCopyrightStyle() text-decoration: none; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Let's Talk</a>
+        <span style="font-size:20px; font-weight:300; margin-left:5px;margin-right:5px; "> | </span>
+        <a @onclick="ShowTermsDialog" style="@GetCopyrightStyle() text-decoration: none; opacity: 0.8; transition: opacity 0.2s; cursor: pointer;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Terms</a>
+    </MudText>
+
+    <div style="display:flex; justify-content:center; align-items:center; margin-top:-20px; margin-bottom:20px;">
+        <a href="https://x.com/plottai" target="_blank" rel="noopener"
+           style="display:inline-flex; align-items:center; opacity:0.65; transition:opacity 0.2s;"
+           onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.65'">
+            <MudIcon Icon="@Icons.Custom.Brands.X" Style="@($"font-size:1.1rem; {GetCopyrightStyle()}")" />
+        </a>
+    </div>
+</MudStack>
+
+@if (_showComingSoon)
+{
+    <div style="position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:9999;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);"
+         @onclick="@(() => _showComingSoon = false)">
+        <MudPaper Elevation="10" Class="pa-8"
+                  Style="max-width:420px;width:90%;border-radius:1.4rem;
+                         background: rgba(10,10,14,0.97);
+                         border: 1px solid rgba(255,255,255,0.08);
+                         box-shadow: 0 8px 40px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05);"
+                  @onclick:stopPropagation="true">
+            <MudStack Spacing="4" AlignItems="AlignItems.Center">
+                <MudText Typo="Typo.h5" Style="font-weight:700; font-family:'Orbitron',sans-serif; font-size:1.3rem;
+                                                background: linear-gradient(135deg,#9333ea,#d946ef,#00ff88);
+                                                -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">
+                    🚀 Coming Soon
+                </MudText>
+                <MudDivider Style="width:60%; border-color: rgba(255,255,255,0.1);" />
+                <MudText Align="Align.Center" Class="modern-text" Style="font-size:14.5px;line-height:1.8;color:rgba(226,232,240,0.82);">
+                    The agent system is currently in <strong style="color:#d946ef;">internal alpha testing</strong>.
+                    Public beta access is coming soon. We are currently investing heavily in security before our public launch. Stay tuned!
+                </MudText>
+                <MudButton Variant="Variant.Outlined" Color="Color.Default"
+                           Style="margin-top:8px; border-color:rgba(255,255,255,0.18); color:rgba(226,232,240,0.75);"
+                           OnClick="@(() => _showComingSoon = false)">
+                    Got it!
+                </MudButton>
+            </MudStack>
+        </MudPaper>
+    </div>
+}
+
+@if (_showTerms)
+{
+    <div style="position:fixed;inset:0;background:rgba(0,0,0,0.70);z-index:9999;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(5px);overflow-y:auto;padding:20px;"
+         @onclick="@(() => _showTerms = false)">
+        <MudPaper Elevation="10" Class="pa-8"
+                  Style="max-width:720px;width:95%;max-height:85vh;overflow-y:auto;border-radius:1.4rem;
+                         background: rgba(10,10,14,0.98);
+                         border: 1px solid rgba(255,255,255,0.1);
+                         box-shadow: 0 8px 48px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.05);"
+                  @onclick:stopPropagation="true">
+            <MudStack Spacing="5" AlignItems="AlignItems.Start">
+                <MudText Typo="Typo.h5" Style="font-weight:700; font-family:'Orbitron',sans-serif; font-size:1.4rem; color:#e0e7ff; width:100%; text-align:center;">
+                    Terms & Conditions
+                </MudText>
+                <MudDivider Style="width:100%; border-color: rgba(255,255,255,0.12);" />
+
+                <div style="color:rgba(226,232,240,0.88); font-size:14px; line-height:1.75; width:100%;">
+                    <p style="margin-bottom:16px;"><strong style="color:#d946ef;">English</strong></p>
+
+                    <p style="margin-bottom:14px;"><strong>1. Scope of Application</strong></p>
+                    <p style="margin-bottom:14px;">
+                        These Terms & Conditions govern the use of Plott AI software ("Software"), provided by Plott AI ("Provider"). 
+                        By downloading, installing, or using the Software, you agree to these terms in full. Swiss law applies exclusively.
+                    </p>
+
+                    <p style="margin-bottom:14px;"><strong>2. License Grant</strong></p>
+                    <p style="margin-bottom:14px;">
+                        The Provider grants you a limited, non-exclusive, non-transferable, revocable license to use the Software 
+                        for internal evaluation purposes only. Any commercial use, redistribution, modification, reverse engineering, 
+                        or deployment for third parties is strictly prohibited without prior written consent.
+                    </p>
+
+                    <p style="margin-bottom:14px;"><strong>3. Disclaimer of Warranty</strong></p>
+                    <p style="margin-bottom:14px;">
+                        The Software is provided "as-is" without warranty of any kind, express or implied, including but not limited 
+                        to warranties of merchantability, fitness for a particular purpose, or non-infringement. The Provider does not 
+                        guarantee error-free operation, data integrity, or system compatibility.
+                    </p>
+
+                    <p style="margin-bottom:14px;"><strong>4. Limitation of Liability</strong></p>
+                    <p style="margin-bottom:14px;">
+                        To the maximum extent permitted by Swiss law, the Provider shall not be liable for any direct, indirect, incidental, 
+                        consequential, or special damages arising from the use or inability to use the Software, including data loss, 
+                        security breaches, or operational disruptions. The user assumes all risks.
+                    </p>
+
+                    <p style="margin-bottom:14px;"><strong>5. Data Protection & Privacy</strong></p>
+                    <p style="margin-bottom:14px;">
+                        The Software processes data locally on your hardware. The Provider does not collect or transmit personal data 
+                        unless explicitly configured by the user. Users must comply with applicable data protection laws, including 
+                        Swiss Federal Act on Data Protection (FADP) and GDPR where applicable.
+                    </p>
+
+                    <p style="margin-bottom:14px;"><strong>6. Governing Law & Jurisdiction</strong></p>
+                    <p style="margin-bottom:14px;">
+                        These terms are governed by Swiss substantive law, excluding conflict of law provisions. 
+                        Exclusive jurisdiction lies with the competent courts of Zurich, Switzerland.
+                    </p>
+
+                    <MudDivider Style="width:100%; border-color: rgba(255,255,255,0.08); margin:24px 0;" />
+
+                    <p style="margin-bottom:16px;"><strong style="color:#d946ef;">Deutsch</strong></p>
+
+                    <p style="margin-bottom:14px;"><strong>1. Geltungsbereich</strong></p>
+                    <p style="margin-bottom:14px;">
+                        Diese Allgemeinen Geschäftsbedingungen regeln die Nutzung der Plott AI Software ("Software"), bereitgestellt von 
+                        Plott AI ("Anbieter"). Mit dem Herunterladen, Installieren oder Nutzen der Software stimmen Sie diesen Bedingungen 
+                        vollumfänglich zu. Es gilt ausschliesslich Schweizer Recht.
+                    </p>
+
+                    <p style="margin-bottom:14px;"><strong>2. Lizenzgewährung</strong></p>
+                    <p style="margin-bottom:14px;">
+                        Der Anbieter gewährt Ihnen eine beschränkte, nicht-exklusive, nicht-übertragbare, widerrufliche Lizenz zur Nutzung 
+                        der Software ausschliesslich für interne Evaluationszwecke. Jegliche kommerzielle Nutzung, Weitergabe, Modifikation, 
+                        Rückentwicklung oder Bereitstellung für Dritte ist ohne vorherige schriftliche Zustimmung strengstens untersagt.
+                    </p>
+
+                    <p style="margin-bottom:14px;"><strong>3. Gewährleistungsausschluss</strong></p>
+                    <p style="margin-bottom:14px;">
+                        Die Software wird "wie besehen" ohne jegliche Gewährleistung bereitgestellt, weder ausdrücklich noch stillschweigend, 
+                        einschliesslich, aber nicht beschränkt auf Gewährleistungen der Marktgängigkeit, Eignung für einen bestimmten Zweck 
+                        oder Nichtverletzung. Der Anbieter übernimmt keine Garantie für fehlerfreien Betrieb, Datenintegrität oder Systemkompatibilität.
+                    </p>
+
+                    <p style="margin-bottom:14px;"><strong>4. Haftungsbeschränkung</strong></p>
+                    <p style="margin-bottom:14px;">
+                        Im nach Schweizer Recht maximal zulässigen Umfang haftet der Anbieter nicht für direkte, indirekte, zufällige, 
+                        Folge- oder besondere Schäden, die aus der Nutzung oder Nichtnutzung der Software entstehen, einschliesslich 
+                        Datenverlust, Sicherheitsverletzungen oder Betriebsstörungen. Der Nutzer trägt sämtliche Risiken.
+                    </p>
+
+                    <p style="margin-bottom:14px;"><strong>5. Datenschutz & Privatsphäre</strong></p>
+                    <p style="margin-bottom:14px;">
+                        Die Software verarbeitet Daten lokal auf Ihrer Hardware. Der Anbieter erhebt oder überträgt keine personenbezogenen 
+                        Daten, sofern nicht ausdrücklich vom Nutzer konfiguriert. Nutzer müssen geltende Datenschutzgesetze einhalten, 
+                        einschliesslich Schweizer Datenschutzgesetz (DSG) und DSGVO, wo anwendbar.
+                    </p>
+
+                    <p style="margin-bottom:14px;"><strong>6. Anwendbares Recht & Gerichtsstand</strong></p>
+                    <p style="margin-bottom:14px;">
+                        Diese Bedingungen unterliegen dem materiellen Schweizer Recht unter Ausschluss kollisionsrechtlicher Bestimmungen. 
+                        Ausschliesslicher Gerichtsstand ist Zürich, Schweiz.
+                    </p>
+                </div>
+
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true"
+                           Style="margin-top:16px;"
+                           OnClick="@(() => _showTerms = false)">
+                    Close
+                </MudButton>
+            </MudStack>
+        </MudPaper>
+    </div>
+}
+
+@code {
+    private string name = string.Empty;
+    private string email = string.Empty;
+    private string selectedOption = "Product Demo";
+
+    protected override void OnInitialized()
+    {
+        ThemeService.OnChange += StateHasChanged;
+    }
+
+    private string GetDescriptionTextColor()
+    {
+        return ThemeService.IsDarkMode ? "color: #e2e8f0;" : "color: #1e293b;";
+    }
+
+    private string GetCardStyle()
+    {
+        if (ThemeService.IsDarkMode)
+        {
+            return "height: 100%;";
+        }
+        return "height: 100%; background: #ffffff !important; border: 1px solid rgba(15, 23, 42, 0.1) !important; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08) !important;";
+    }
+
+    private string GetCodeSectionStyle()
+    {
+        if (ThemeService.IsDarkMode)
+        {
+            return "max-width: 900px; width: 100%; border-radius: 1.5rem; border: 1px solid rgba(139, 92, 246, 0.5);";
+        }
+        return "max-width: 900px; width: 100%; border-radius: 1.5rem; border: 1px solid rgba(15, 23, 42, 0.12); background: rgba(255, 255, 255, 0.95);";
+    }
+
+    private string GetTermsStyle()
+    {
+        if (ThemeService.IsDarkMode)
+        {
+            return "max-width: 900px; width: 100%; background: rgba(15, 23, 42, 0.7); border-radius: 1rem; border: 1px solid rgba(139, 92, 246, 0.5);";
+        }
+        return "max-width: 900px; width: 100%; background: rgba(255, 255, 255, 0.92); border-radius: 1rem; border: 1px solid rgba(15, 23, 42, 0.12);";
+    }
+
+    private string GetTermsTitleStyle() =>
+        ThemeService.IsDarkMode
+            ? "font-weight:700; color: #e0e7ff;"
+            : "font-weight:700; color: #0f172a;";
+
+    private string GetTermsTextStyle() =>
+        ThemeService.IsDarkMode
+            ? "color: rgba(226, 232, 240, 0.85);"
+            : "color: #1e293b;";
+
+    private string GetCopyrightStyle() =>
+        ThemeService.IsDarkMode
+            ? "color: rgba(226, 232, 240, 0.6);"
+            : "color: #475569;";
+
+    private bool _showComingSoon;
+    private bool _showTerms;
+
+    private void ShowComingSoonDialog() => _showComingSoon = true;
+    private void ShowTermsDialog() => _showTerms = true;
+
+    private void HandleSubmit()
+    {
+        // Handle form submission
+    }
+
+    public void Dispose()
+    {
+        ThemeService.OnChange -= StateHasChanged;
+    }
+}
