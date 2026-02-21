@@ -1,0 +1,32 @@
+name: Deploy Blazor to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 10.0.100-preview.7.24307.13  # Ersetze mit deiner genauen SDK-Version
+
+      - name: Publish Blazor mit AOT
+        run: dotnet publish src/WebApp -c Release -o release/wwwroot -p:PublishAot=true
+
+      - name: Kopiere nach docs
+        run: |
+          mkdir -p docs
+          cp -r release/wwwroot/* docs/
+
+      - name: Commit und Push
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add docs/
+          git commit -m "Update docs für GitHub Pages"
+          git push
