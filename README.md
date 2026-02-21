@@ -9,13 +9,13 @@ Copyright (c) 2026 PlottAI. All rights reserved. This source code is provided fo
 ## Pages
 
 - `/` — Main landing page with Quick Introduction
-- `/integrations` — Visual grid of the main features
-- `/shoutouts` — Download section
 
 ## Tech Stack
 
 - GitHub Pages — Hosting
 - Custom CSS
+- JavaScript
+- Wasm
 
 ## Deploy
 
