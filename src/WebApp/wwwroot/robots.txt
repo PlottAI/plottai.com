@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://plottai.com/sitemap.xml
+
+# Disallow service worker files
+Disallow: /service-worker.js
+Disallow: /service-worker-assets.js
