@@ -156,10 +156,10 @@
     <MudPaper Elevation="1" Class="pa-6" Style="@GetTermsStyle()">
         <MudText Typo="Typo.h6" Class="mb-2" Style="@GetTermsTitleStyle()">Plott AI – Software Terms &amp; Licensing</MudText>
         <MudText Align="Align.Left" Class="modern-text" Style="@($"{GetTermsTextStyle()} font-size:13px;")">
-            Plott is a novel, experimental agent system provided "as-is" without any warranty. By using this software, you accept all risks regarding data loss, security exposures, or unintended consequences.
-        </MudText>
+            Plott is a novel, experimental agent system provided "as-is" without any warranty. By using this software, you accept all risks regarding data loss, security exposures, or unintended consequences. This license is strictly for internal evaluation only.
+        </MudText>       
         <MudText Align="Align.Left" Class="modern-text" Style="@($"{GetTermsTextStyle()} font-size:13px;")">
-            This license is strictly for internal evaluation only. Redistribution, modification, resale, or third-party deployment is prohibited without explicit written permission. You are solely responsible for compliance with applicable laws.
+            <br />To prevent widespread distribution while we are still developing our Security Supervisor (which has not yet been released), redistribution, modification, resale, or third-party deployment is currently prohibited without explicit written permission. You are solely responsible for compliance with applicable laws.
         </MudText>
         <MudText Align="Align.Left" Class="modern-text" Style="@($"{GetTermsTextStyle()} font-size:13px;")">
             In no event shall the authors be liable for any damages, losses, or misuse arising from the software. Use Plott at your own risk.
@@ -169,7 +169,7 @@
     <MudDivider Class="my-8" Style="width: 70%;" />
 
     <MudText Align="Align.Center" Class="mb-8" Typo="Typo.caption" Style="@GetCopyrightStyle()">
-        © @DateTime.Now.Year Plott. All rights reserved. 
+        © @DateTime.Now.Year PlottAI. All rights reserved. 
         <span style="font-size:20px; font-weight:300; margin-left:5px;margin-right:5px; "> | </span>
         <a href="mailto:info@plottai.com" style="@GetCopyrightStyle() text-decoration: none; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Let's Talk</a>
         <span style="font-size:20px; font-weight:300; margin-left:5px;margin-right:5px; "> | </span>
