@@ -4,9 +4,32 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BlazorApp</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Plott AI - Local AI Agent System</title>
+    <meta name="description" content="Plott AI is a local AI agent system that runs entirely on your hardware. Private, secure, and independent - no cloud dependencies. Auto-generates code, integrations, and CLI tools." />
+    <meta name="keywords" content="Local AI, AI Agent, Private AI, On-Premise AI, LLM, Machine Learning, Autonomous Agents, Code Generation, Telegram Bot" />
+    <meta name="author" content="Plott AI" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://plottai.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://plottai.com/" />
+    <meta property="og:title" content="Plott AI - The AI that runs on your hardware" />
+    <meta property="og:description" content="Local AI agent system that gets to know you and gets things done. Run AI entirely locally with no data shared with third parties." />
+    <meta property="og:image" content="https://plottai.com/assets/PlottAI_Logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://plottai.com/" />
+    <meta property="twitter:title" content="Plott AI - The AI that runs on your hardware" />
+    <meta property="twitter:description" content="Local AI agent system that gets to know you and gets things done. Run AI entirely locally with no data shared with third parties." />
+    <meta property="twitter:image" content="https://plottai.com/assets/PlottAI_Logo.png" />
+    <meta name="twitter:site" content="@plottai" />
+
     <base href="/" />
-    <link href="_framework/dotnet.ihwqqk0f2t.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-9hBODpfTxL98z5zJMQpgAse46TR7Xd8ySlzJRVhCfUQ=" />
+    <link href="_framework/dotnet.m6s551zk21.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-Eulul74otPm/aJYU1ZJ+FSSTvCVwi9W99M6mVKE2Hzo=" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
@@ -16,10 +39,39 @@
     <link href="manifest.webmanifest" rel="manifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Plott AI",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Windows, Linux, macOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Local AI agent system that runs entirely on your hardware. Private, secure, and independent.",
+      "url": "https://plottai.com",
+      "author": {
+        "@type": "Organization",
+        "name": "Plott AI",
+        "url": "https://plottai.com"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1"
+      }
+    }
+    </script>
+
     <script type="importmap">{
   "imports": {
     "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.66stpp682q.js",
-    "./_framework/dotnet.js": "./_framework/dotnet.ihwqqk0f2t.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.m6s551zk21.js",
     "./_framework/dotnet.native.js": "./_framework/dotnet.native.6cn61js7j8.js",
     "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.q5rqv3xrhm.js"
   },
@@ -27,8 +79,8 @@
   "integrity": {
     "./_framework/blazor.webassembly.66stpp682q.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
     "./_framework/blazor.webassembly.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
-    "./_framework/dotnet.ihwqqk0f2t.js": "sha256-9hBODpfTxL98z5zJMQpgAse46TR7Xd8ySlzJRVhCfUQ=",
-    "./_framework/dotnet.js": "sha256-9hBODpfTxL98z5zJMQpgAse46TR7Xd8ySlzJRVhCfUQ=",
+    "./_framework/dotnet.js": "sha256-Eulul74otPm/aJYU1ZJ+FSSTvCVwi9W99M6mVKE2Hzo=",
+    "./_framework/dotnet.m6s551zk21.js": "sha256-Eulul74otPm/aJYU1ZJ+FSSTvCVwi9W99M6mVKE2Hzo=",
     "./_framework/dotnet.native.6cn61js7j8.js": "sha256-pghlyMucTOUf+CGds+FUc4mgm9pgK08DgoK78/JMZfM=",
     "./_framework/dotnet.native.js": "sha256-pghlyMucTOUf+CGds+FUc4mgm9pgK08DgoK78/JMZfM=",
     "./_framework/dotnet.runtime.js": "sha256-ArknccFM1sHNVcih0x1h52AG+abNCoQjl6BlVrv3ePw=",
@@ -41,17 +93,48 @@
     <canvas id="starfield" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
 
     <div id="app" style="position: relative; z-index: 1;">
-        <svg class="loading-progress">
-            <defs>
-                <linearGradient id="loadingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
+        <div style="max-width: 800px; margin: 80px auto; padding: 40px 20px; font-family: 'Poppins', sans-serif; color: #e2e8f0;">
+            <h1 style="font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 20px; background: linear-gradient(135deg, #9333ea, #764ba2, #d946ef); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                Plott AI
+            </h1>
+            <h2 style="font-size: 1.2rem; font-weight: 600; text-align: center; margin-bottom: 30px; color: #cbd5e1;">
+                The AI that runs on your hardware
+            </h2>
+            <p style="line-height: 1.8; margin-bottom: 20px; color: rgba(226, 232, 240, 0.85);">
+                Plott AI is a local AI agent system that runs entirely on your hardware. Private, secure, and independent - no cloud dependencies. 
+                It gets to know you and gets things done.
+            </p>
+
+            <h3 style="font-size: 1.5rem; margin-top: 40px; margin-bottom: 20px; color: #e0e7ff;">Features</h3>
+            <ul style="line-height: 1.8; color: rgba(226, 232, 240, 0.85); list-style: none; padding: 0;">
+                <li style="margin-bottom: 15px;">⚡ <strong>Run Locally</strong> - Use the power of your machine, no clouds, independent</li>
+                <li style="margin-bottom: 15px;">🔒 <strong>Secured by Default</strong> - Secure architecture by default, governed by AI</li>
+                <li style="margin-bottom: 15px;">💻 <strong>Auto Code</strong> - Agents that complete the missing pieces with self-generated code and CLI</li>
+                <li style="margin-bottom: 15px;">🧠 <strong>Local LLM</strong> - Run AI entirely locally, no data shared with third parties</li>
+                <li style="margin-bottom: 15px;">🔌 <strong>Extensions</strong> - Use existing extensions or let the AI generate missing ones</li>
+                <li style="margin-bottom: 15px;">📱 <strong>Telegram Integration</strong> - Access the Plott AI wherever you are via Telegram messenger or the local app</li>
+            </ul>
+
+            <h3 style="font-size: 1.5rem; margin-top: 40px; margin-bottom: 20px; color: #e0e7ff;">Platform Support</h3>
+            <p style="line-height: 1.8; margin-bottom: 20px; color: rgba(226, 232, 240, 0.85);">
+                Available for Windows 11 (currently in internal alpha testing). Linux and macOS support coming soon.
+            </p>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <svg class="loading-progress">
+                    <defs>
+                        <linearGradient id="loadingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle r="40%" cx="50%" cy="50%" />
+                    <circle r="40%" cx="50%" cy="50%" />
+                </svg>
+                <p style="margin-top: 20px; color: rgba(226, 232, 240, 0.6);">Loading Plott AI...</p>
+            </div>
+        </div>
     </div>
 
     <div id="blazor-error-ui" style="position: relative; z-index: 2;">

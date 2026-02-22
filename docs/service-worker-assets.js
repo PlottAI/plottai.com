@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "NgPr5Wp1",
+  "version": "FLVUP2SJ",
   "assets": [
     {
       "hash": "sha256-QP1V9j9IsTOlcvpu66I8g7FsecoFahhqZ3V8HflAfX4=",
@@ -170,24 +170,24 @@ self.assetsManifest = {
       "url": "_framework/System.Threading.mdjiq1lozv.wasm"
     },
     {
-      "hash": "sha256-9TZyC5HdLCFt4/PvlVfeBRqxJ5ij5KYO9A3xNBGRpd0=",
-      "url": "_framework/WasmApp.pniepa428b.wasm"
+      "hash": "sha256-SJ+TZCQagM+wqZs0734WYOz2e+lUVU5Z1MXJ68QPjkQ=",
+      "url": "_framework/WasmApp.ogil8u1z3n.wasm"
     },
     {
       "hash": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
       "url": "_framework/blazor.webassembly.66stpp682q.js"
     },
     {
-      "hash": "sha256-9hBODpfTxL98z5zJMQpgAse46TR7Xd8ySlzJRVhCfUQ=",
-      "url": "_framework/dotnet.ihwqqk0f2t.js"
-    },
-    {
-      "hash": "sha256-clxpKpxYwWQzKyE7aYGDGpaHLwMdn13xHpbR4ykkilM=",
-      "url": "_framework/dotnet.native.24m24nw14m.wasm"
+      "hash": "sha256-Eulul74otPm/aJYU1ZJ+FSSTvCVwi9W99M6mVKE2Hzo=",
+      "url": "_framework/dotnet.m6s551zk21.js"
     },
     {
       "hash": "sha256-pghlyMucTOUf+CGds+FUc4mgm9pgK08DgoK78/JMZfM=",
       "url": "_framework/dotnet.native.6cn61js7j8.js"
+    },
+    {
+      "hash": "sha256-YDc1GtqLk7uzZZaP9fgssmiw3N0QcnojAcAJ7HCkq/4=",
+      "url": "_framework/dotnet.native.kfjdt61ka5.wasm"
     },
     {
       "hash": "sha256-ArknccFM1sHNVcih0x1h52AG+abNCoQjl6BlVrv3ePw=",
@@ -222,7 +222,7 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-SSztibqdW8g6CRGeCFi63jU2VSH8f9q6SGrAnUTabTM=",
+      "hash": "sha256-X5xl083hCWLhoNxQxzsq1QOYUB2IqRvTOyaSeAG2uXw=",
       "url": "index.html"
     },
     {
@@ -232,6 +232,14 @@ self.assetsManifest = {
     {
       "hash": "sha256-gCNMAQ5mhIUqzYGm65rxwkxxbOYserG1Fp6BYIbYgOY=",
       "url": "manifest.webmanifest"
+    },
+    {
+      "hash": "sha256-vlAYcqwXJiTxZ2Rx9a5b8v72ewfFmrVkmr6ZDctRZes=",
+      "url": "robots.txt"
+    },
+    {
+      "hash": "sha256-fFy88wO+lum3MWjpRE5VC/SxcFLB3zgLZaB1r3CGveY=",
+      "url": "sitemap.xml"
     }
   ]
 };
