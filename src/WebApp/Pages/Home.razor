@@ -1,9 +1,9 @@
-﻿@page "/"
+@page "/"
 @using WasmApp.Services
 @inject ThemeService ThemeService
 @implements IDisposable
 
-<PageTitle>Welcome to Usefull AI</PageTitle>
+<PageTitle>Plott AI – Private AI for Business</PageTitle>
 
 <MudStack Spacing="6" AlignItems="AlignItems.Center" Class="mt-8 page-enter">
 
@@ -17,15 +17,15 @@
     <MudSpacer />
 
     <MudText Align="Align.Center" GutterBottom="true" Class="modern-text" Style="margin-top:-40px;margin-bottom:50px;font-size:15px;" Color="Color.Dark">
-        The AI that runs on your hardware. <br />
-        It gets to know you and get things done.
+        Local. Isolated. Private. <br />
+        AI built for business use cases and compliance-sensitive environments.
     </MudText>
 
     <MudDivider Class="my-8" Style="width: 70%;" />
 
     <MudText Typo="Typo.h4" Align="Align.Center" Class="mb-8 modern-text" Color="Color.Dark" Style="margin-top:-20px;">
         <span style="font-size:35px; font-weight:1000; color: mediumpurple;">⟩ </span>
-        <span style="@GetDescriptionTextColor() font-weight: 600;">THE AI THAT MAKES YOUR DAY BETTER</span>
+        <span style="@GetDescriptionTextColor() font-weight: 600;">CORE CAPABILITIES</span>
     </MudText>
 
     <MudGrid Justify="Justify.Center" Class="mx-auto" Style="max-width: 960px;" AlignItems="AlignItems.Center" Spacing="3">
@@ -33,9 +33,9 @@
         <MudPaper Elevation="3" Class="pa-4 feature-card" Style="@($"{GetCardStyle()} margin: 0 auto;")" MaxWidth="250px">
                 <MudStack AlignItems="AlignItems.Center" Spacing="2">
                     <MudIcon Icon="@Icons.Material.Filled.Speed" Color="Color.Info" Size="Size.Large" />
-                    <MudText Typo="Typo.h6">Run Locally</MudText>
+                    <MudText Typo="Typo.h6">Local Execution</MudText>
                     <MudText Align="Align.Center" Class="modern-text feature-card-text">
-                        Use the power of your machine, no clouds, independent
+                        All AI processing runs on your own infrastructure — no cloud, no data leaving your environment.
                     </MudText>
                 </MudStack>
             </MudPaper>
@@ -45,9 +45,9 @@
             <MudPaper Elevation="3" Class="pa-4 feature-card" Style="@($"{GetCardStyle()} margin: 0 auto;")" MaxWidth="250px">
                 <MudStack AlignItems="AlignItems.Center" Spacing="2">
                     <MudIcon Icon="@Icons.Material.Filled.Security" Color="Color.Success" Size="Size.Large" />
-                    <MudText Typo="Typo.h6">Secured by Default</MudText>
+                    <MudText Typo="Typo.h6">Isolation & Privacy</MudText>
                     <MudText Align="Align.Center" Class="modern-text feature-card-text">
-                        Secure architecture by Default, governed by AI
+                        Fully isolated processes. No external APIs. Designed for GDPR and data-protection requirements.
                     </MudText>
                 </MudStack>
             </MudPaper>
@@ -57,9 +57,9 @@
             <MudPaper Elevation="3" Class="pa-4 feature-card" Style="@($"{GetCardStyle()} margin: 0 auto;")" MaxWidth="250px">
                 <MudStack AlignItems="AlignItems.Center" Spacing="2">
                     <MudIcon Icon="@Icons.Material.Filled.Code" Color="Color.Info" Size="Size.Large" />
-                    <MudText Typo="Typo.h6">Auto Code</MudText>
+                    <MudText Typo="Typo.h6">Business Automation</MudText>
                     <MudText Align="Align.Center" Class="modern-text feature-card-text">
-                        Agents that complete the missing pieces with self-generated code and CLI
+                        Automate complex business workflows with secure, auditable AI processing logic.
                     </MudText>
                 </MudStack>
             </MudPaper>
@@ -71,7 +71,7 @@
                     <MudIcon Icon="@Icons.Material.Filled.Grain" Color="Color.Info" Size="Size.Large" />
                     <MudText Typo="Typo.h6">Local LLM</MudText>
                     <MudText Align="Align.Center" Class="modern-text feature-card-text">
-                        Run AI entirely locally, no data shared with third parties
+                        Run large language models entirely on-premise — zero data shared with third parties.
                     </MudText>
                 </MudStack>
             </MudPaper>
@@ -81,9 +81,9 @@
             <MudPaper Elevation="3" Class="pa-4 feature-card" Style="@($"{GetCardStyle()} margin: 0 auto;")" MaxWidth="250px">
                 <MudStack AlignItems="AlignItems.Center" Spacing="2">
                     <MudIcon Icon="@Icons.Material.Filled.ViewModule" Color="Color.Info" Size="Size.Large" />
-                    <MudText Typo="Typo.h6">Extensions</MudText>
+                    <MudText Typo="Typo.h6">Extensible Platform</MudText>
                     <MudText Align="Align.Center" Class="modern-text feature-card-text">
-                        Use existing extensions or let the AI generate missing ones
+                        Integrate domain-specific extensions or build custom ones tailored to your business processes.
                     </MudText>
                 </MudStack>
             </MudPaper>
@@ -91,9 +91,9 @@
     </MudGrid>
 
     <MudStack Row="true" AlignItems="AlignItems.Center" Justify="Justify.Center" Spacing="2" Style="margin-top:25px;margin-bottom:-15px;">
-        <MudIcon Icon="@Icons.Custom.Brands.Telegram" Style="font-size: 1.4rem; color: #229ED9;" />
+        <MudIcon Icon="@Icons.Material.Filled.Shield" Style="font-size: 1.4rem; color: mediumpurple;" />
         <MudText GutterBottom="true" Class="modern-text" Style="font-size:15px;" Color="Color.Dark">
-            Access the Plott AI wherever you are. Use Telegram messenger or the local app on your pc.
+            Built for enterprises, regulated industries, and privacy-first environments.
         </MudText>
     </MudStack>
 
@@ -106,9 +106,9 @@
 
     <MudStack Row="true" AlignItems="AlignItems.Center" Style="margin-top:0px;margin-bottom:-20px;">
 
-        <MudChip T="string" Size="Size.Small">Private Use</MudChip>
-        <MudChip T="string" Size="Size.Small">Work</MudChip>
-        <MudChip T="string" Size="Size.Small">Embedded Pc</MudChip>
+        <MudChip T="string" Size="Size.Small">Enterprise</MudChip>
+        <MudChip T="string" Size="Size.Small">Healthcare & Finance</MudChip>
+        <MudChip T="string" Size="Size.Small">Edge & On-Premise</MudChip>
     </MudStack>
         
     <MudPaper Elevation="2" Class="pa-6 code-section" Style="@GetCodeSectionStyle()">
@@ -149,29 +149,12 @@
         </MudTabs>
     </MudPaper>
 
-    <MudText Align="Align.Center" GutterBottom="true" Class="modern-text" Style="margin-top:10px;margin-bottom:10px;font-size:22px;" Color="Color.Dark">
-        😍
-    </MudText>
-
-    <MudPaper Elevation="1" Class="pa-6" Style="@GetTermsStyle()">
-        <MudText Typo="Typo.h6" Class="mb-2" Style="@GetTermsTitleStyle()">Plott AI – Software Terms &amp; Licensing</MudText>
-        <MudText Align="Align.Left" Class="modern-text" Style="@($"{GetTermsTextStyle()} font-size:13px;")">
-            Plott is a novel, experimental agent system provided "as-is" without any warranty. By using this software, you accept all risks regarding data loss, security exposures, or unintended consequences. This license is strictly for internal evaluation only.
-        </MudText>       
-        <MudText Align="Align.Left" Class="modern-text" Style="@($"{GetTermsTextStyle()} font-size:13px;")">
-            <br />To prevent widespread distribution while we are still developing our Security Supervisor (which has not yet been released), redistribution, modification, resale, or third-party deployment is currently prohibited without explicit written permission. You are solely responsible for compliance with applicable laws.
-        </MudText>
-        <MudText Align="Align.Left" Class="modern-text" Style="@($"{GetTermsTextStyle()} font-size:13px;")">
-            In no event shall the authors be liable for any damages, losses, or misuse arising from the software. Use Plott at your own risk.
-        </MudText>
-    </MudPaper>
-
     <MudDivider Class="my-8" Style="width: 70%;" />
 
     <MudText Align="Align.Center" Class="mb-8" Typo="Typo.caption" Style="@GetCopyrightStyle()">
         © @DateTime.Now.Year PlottAI. All rights reserved. 
         <span style="font-size:20px; font-weight:300; margin-left:5px;margin-right:5px; "> | </span>
-        <a href="mailto:info@plottai.com" style="@GetCopyrightStyle() text-decoration: none; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Let's Talk</a>
+        <a href="mailto:v.carlucci@hotmail.com" style="@GetCopyrightStyle() text-decoration: none; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Let's Talk</a>
         <span style="font-size:20px; font-weight:300; margin-left:5px;margin-right:5px; "> | </span>
         <a @onclick="ShowTermsDialog" style="@GetCopyrightStyle() text-decoration: none; opacity: 0.8; transition: opacity 0.2s; cursor: pointer;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Terms</a>
     </MudText>
@@ -203,8 +186,8 @@
                 </MudText>
                 <MudDivider Style="width:60%; border-color: rgba(255,255,255,0.1);" />
                 <MudText Align="Align.Center" Class="modern-text" Style="font-size:14.5px;line-height:1.8;color:rgba(226,232,240,0.82);">
-                    The agent system is currently in <strong style="color:#d946ef;">internal alpha testing</strong>.
-                    Public beta access is coming soon. We are currently investing heavily in security before our public launch. Stay tuned!
+                    Plott AI is currently in <strong style="color:#d946ef;">internal alpha testing</strong>.
+                    Public beta access is coming soon. We are investing heavily in security and compliance before our public launch. Stay tuned!
                 </MudText>
                 <MudButton Variant="Variant.Outlined" Color="Color.Default"
                            Style="margin-top:8px; border-color:rgba(255,255,255,0.18); color:rgba(226,232,240,0.75);"
@@ -364,25 +347,6 @@
         return "max-width: 900px; width: 100%; border-radius: 1.5rem; border: 1px solid rgba(15, 23, 42, 0.12); background: rgba(255, 255, 255, 0.95);";
     }
 
-    private string GetTermsStyle()
-    {
-        if (ThemeService.IsDarkMode)
-        {
-            return "max-width: 900px; width: 100%; background: rgba(15, 23, 42, 0.7); border-radius: 1rem; border: 1px solid rgba(139, 92, 246, 0.5);";
-        }
-        return "max-width: 900px; width: 100%; background: rgba(255, 255, 255, 0.92); border-radius: 1rem; border: 1px solid rgba(15, 23, 42, 0.12);";
-    }
-
-    private string GetTermsTitleStyle() =>
-        ThemeService.IsDarkMode
-            ? "font-weight:700; color: #e0e7ff;"
-            : "font-weight:700; color: #0f172a;";
-
-    private string GetTermsTextStyle() =>
-        ThemeService.IsDarkMode
-            ? "color: rgba(226, 232, 240, 0.85);"
-            : "color: #1e293b;";
-
     private string GetCopyrightStyle() =>
         ThemeService.IsDarkMode
             ? "color: rgba(226, 232, 240, 0.6);"
@@ -404,3 +368,6 @@
         ThemeService.OnChange -= StateHasChanged;
     }
 }
+
+
+
