@@ -1,144 +1,475 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO Meta Tags -->
-    <title>Plott AI - Local AI Agent System</title>
-    <meta name="description" content="Plott AI is a local AI agent system that runs entirely on your hardware. Private, secure, and independent - no cloud dependencies. Auto-generates code, integrations, and CLI tools." />
-    <meta name="keywords" content="Local AI, AI Agent, Private AI, On-Premise AI, LLM, Machine Learning, Autonomous Agents, Code Generation, Telegram Bot" />
-    <meta name="author" content="Plott AI" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://plottai.com/" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://plottai.com/" />
-    <meta property="og:title" content="Plott AI - The AI that runs on your hardware" />
-    <meta property="og:description" content="Local AI agent system that gets to know you and gets things done. Run AI entirely locally with no data shared with third parties." />
-    <meta property="og:image" content="https://plottai.com/assets/PlottAI_Logo.png" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://plottai.com/" />
-    <meta property="twitter:title" content="Plott AI - The AI that runs on your hardware" />
-    <meta property="twitter:description" content="Local AI agent system that gets to know you and gets things done. Run AI entirely locally with no data shared with third parties." />
-    <meta property="twitter:image" content="https://plottai.com/assets/PlottAI_Logo.png" />
-    <meta name="twitter:site" content="@plottai" />
-
-    <base href="/" />
-    <link href="_framework/dotnet.r2cb9oj1fp.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-44rNTaEGUlYOE8l//tx7CsictFS+aXYc2ekXdHItCpE=" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/app.css" />
-    <!-- If you add any scoped CSS files, uncomment the following to load them
-    <link href="BlazorApp.styles.css" rel="stylesheet" /> -->
-    <link href="manifest.webmanifest" rel="manifest" />
-    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
-
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Plott AI",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Windows, Linux, macOS",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "description": "Local AI agent system that runs entirely on your hardware. Private, secure, and independent.",
-      "url": "https://plottai.com",
-      "author": {
-        "@type": "Organization",
-        "name": "Plott AI",
-        "url": "https://plottai.com"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "ratingCount": "1"
-      }
-    }
-    </script>
-
-    <script type="importmap">{
-  "imports": {
-    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.66stpp682q.js",
-    "./_framework/dotnet.native.js": "./_framework/dotnet.native.xbh7888pqj.js",
-    "./_framework/dotnet.js": "./_framework/dotnet.r2cb9oj1fp.js",
-    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.web2r9gqbh.js"
-  },
-  "scopes": {},
-  "integrity": {
-    "./_framework/blazor.webassembly.66stpp682q.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
-    "./_framework/blazor.webassembly.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
-    "./_framework/dotnet.js": "sha256-44rNTaEGUlYOE8l//tx7CsictFS+aXYc2ekXdHItCpE=",
-    "./_framework/dotnet.native.js": "sha256-g8T1RKg/VFuq6cO4bdCWdf4HPoEF+bChGP1FBjkpaNI=",
-    "./_framework/dotnet.native.xbh7888pqj.js": "sha256-g8T1RKg/VFuq6cO4bdCWdf4HPoEF+bChGP1FBjkpaNI=",
-    "./_framework/dotnet.r2cb9oj1fp.js": "sha256-44rNTaEGUlYOE8l//tx7CsictFS+aXYc2ekXdHItCpE=",
-    "./_framework/dotnet.runtime.js": "sha256-SOUHEQ3FhDAibBSR2u90NWZpoBjPuWRmH0BAATUlhJU=",
-    "./_framework/dotnet.runtime.web2r9gqbh.js": "sha256-SOUHEQ3FhDAibBSR2u90NWZpoBjPuWRmH0BAATUlhJU="
-  }
-}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plott Ai | The Last Mile AI for Code</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <canvas id="starfield" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
 
-    <div id="app" style="position: relative; z-index: 1;">
-        <!-- SEO Content (hidden but readable by crawlers) -->
-        <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">
-            <h1>Plott AI - Local AI Agent System</h1>
-            <h2>The AI that runs on your hardware</h2>
-            <p>
-                Plott AI is a local AI agent system that runs entirely on your hardware. Private, secure, and independent - no cloud dependencies. 
-                It gets to know you and gets things done.
-            </p>
-            <h3>Features</h3>
-            <ul>
-                <li>Run Locally - Use the power of your machine, no clouds, independent</li>
-                <li>Secured by Default - Secure architecture by default, governed by AI</li>
-                <li>Auto Code - Agents that complete the missing pieces with self-generated code and CLI</li>
-                <li>Local LLM - Run AI entirely locally, no data shared with third parties</li>
-                <li>Extensions - Use existing extensions or let the AI generate missing ones</li>
-                <li>Telegram Integration - Access the Plott AI wherever you are via Telegram messenger or the local app</li>
-            </ul>
-            <h3>Platform Support</h3>
-            <p>Available for Windows 11 (currently in internal alpha testing). Linux and macOS support coming soon.</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-icon"></span>
+                Plott Ai
+            </div>
+            <div class="nav-links">
+                <a href="#platform">Platform</a>
+                <a href="#concept">How it works</a>
+                <a href="#usecases">Use Cases</a>
+                <a href="#login" class="nav-btn modal-trigger">Login</a>
+            </div>
         </div>
+    </nav>
 
-        <!-- Visible loading spinner -->
-        <svg class="loading-progress">
-            <defs>
-                <linearGradient id="loadingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="grid-bg"></div>
+        <canvas id="networkCanvas"></canvas>
+        
+        <div class="container hero-content">
+            <div class="badge">
+                <span class="pulse"></span>
+                <span class="badge-text">v1.1 rc1 • The Adaptation Engine</span>
+            </div>
+            <h1 class="hero-title">
+                The <span class="gradient-text">Last Mile</span> AI<br>for your Code & Beyond.
+            </h1>
+            <p class="hero-subtitle">
+                Your core codebase stays clean. Every client gets a perfect adaptation. Scale custom delivery without hiring more specialists.
+            </p>
+            <div class="cta-group">
+                <button class="btn-primary modal-trigger">
+                    Start Scaling
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8H12.66M12.66 8L8 3.33M12.66 8L8 12.66" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Diagram: The Concept -->
+        <div class="concept-diagram container">
+            <div class="diagram-label">The Adaptation Engine</div>
+            <div class="diagram-flow">
+                <div class="node node-source">
+                    <div class="node-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                    </div>
+                    <div class="node-label">Your Core<br>Codebase</div>
+                    <div class="node-sublabel">Single source of truth</div>
+                </div>
+                
+                <div class="connector">
+                    <div class="line"></div>
+                    <div class="connector-label">Plott AI</div>
+                    <div class="line"></div>
+                </div>
+                
+                <div class="node node-engine">
+                    <div class="node-icon glow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6"/></svg>
+                    </div>
+                    <div class="node-label">Adaptation<br>Engine</div>
+                </div>
+                
+                <div class="connector">
+                    <div class="line"></div>
+                    <div class="connector-label">Deliver</div>
+                    <div class="line"></div>
+                </div>
+                
+                <div class="node-group">
+                    <div class="node node-client">
+                        <div class="node-label">Client A</div>
+                        <div class="node-sublabel">Industrial</div>
+                    </div>
+                    <div class="node node-client">
+                        <div class="node-label">Client B</div>
+                        <div class="node-sublabel">Robotics</div>
+                    </div>
+                    <div class="node node-client">
+                        <div class="node-label">Client C</div>
+                        <div class="node-sublabel">Automation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Problem -->
+    <section class="problem">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">The Bottleneck</span>
+                <h2>Custom work doesn't scale.</h2>
+                <p class="section-desc">Every new client or product needs a custom version of your core software. Every project drains your best engineers. Your core codebase becomes a graveyard of client-specific hacks. And with AI-vibe coding it doesn’t get any better, it actually gets even worse.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-number">01</div>
+                    <h4>The Fork Problem</h4>
+                    <p>Every client becomes a separate fork. Updates become nightmares. Bugs multiply across versions.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-number">02</div>
+                    <h4>The Specialist Trap</h4>
+                    <p>Only senior engineers understand the core. Junior staff can't deliver custom work without breaking things.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-number">03</div>
+                    <h4>The Scaling Wall</h4>
+                    <p>Growing means hiring more expensive specialists. Your margins compress with every new client.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="platform" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">The Platform</span>
+                <h2>One codebase.<br>Unlimited adaptations.</h2>
+                <p class="section-desc">Plott sits between your core repo and your client deployments. AI understands your architecture and generates client-specific code — while your master stays clean and up to date.</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="glass-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+                    </div>
+                    <h3>Intelligent Adaptation</h3>
+                    <p>Our AI reads your core codebase, understands the domain, and generates precise adaptations for each client's unique requirements — without modifying the source.</p>
+                </div>
+
+                <div class="glass-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Seamless Core Updates</h3>
+                    <p>Push an update to your core? Plott automatically propagates it to client deployment, resolving conflicts intelligently. No manual merges.</p>
+                </div>
+
+                <div class="glass-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h3>Empower Non-Specialists</h3>
+                    <p>Your project managers and junior devs can now spin up complex client deployments. The AI handles the domain complexity; they handle the client relationship.</p>
+                </div>
+
+                <div class="glass-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3>Vertical Model</h3>
+                    <p>Your team doesn't have to be domain experts to deliver top-notch solutions.</p>
+                </div>
+
+                <div class="glass-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>The Integration Concept</h3>
+                    <p>Define appropriate extensions to your core code system with standard procedure and ensure clean integration. All underlined with Ai.</p>
+                </div>
+
+                <!-- NEW 6th Card -->
+                <div class="glass-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/></svg>
+                    </div>
+                    <h3>...And Beyond</h3>
+                    <p>Go beyond source code. Extend your adaptation engine to configuration, documentation, deployment pipelines, and operational knowledge. All adapted alongside your core.</p>
+                </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="concept" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">How it works</span>
+                <h2>From request to deployment<br>in minutes, not months.</h2>
+            </div>
+            
+            <div class="terminal container">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">Plott Ai | Code</span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="prompt">@status</span> <span class="cmd">Plott adapt</span> --client "siemens_machine_07" --specs ./code</p>
+                    <p class="output">> Wait for product fineadjustment spec's...</p>
+                    <p class="output">> Mapping to core codebase (v4.2.1-stable)...</p>
+                    <p class="output">> Generating adaptation layer for hmi and plc endpoints...</p>
+                    <p class="output success">> Adaptation compiled. 0 conflicts.</p>
+                    <p class="output highlight">> Deployed to staging. Review link -> git repo: project fab1/cell55<span class="cursor">|</span></p>
+                </div>
+            </div>
+            
+            <div class="workflow-steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <h4>Define the client scope</h4>
+                    <p>Upload specs, describe requirements in plain language, or connect to your project management tool.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <h4>AI generates the adaptation</h4>
+                    <p>Plott analyzes your core code and produces a precise, reviewable adaptation layer for the client.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <h4>Deploy with confidence</h4>
+                    <p>Ship to the client. Core updates propagate automatically. The AI resolves future conflicts for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases / Stats -->
+    <section id="usecases" class="usecases">
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow">Where it shines</span>
+                <h2>Built for complexity.<br>Designed for scale.</h2>
+                <p class="section-desc">The more client-specific your work, the more value Plott unlocks.</p>
+            </div>
+            
+            <div class="usecase-grid">
+                <div class="usecase-card">
+                    <div class="usecase-icon">🏭</div>
+                    <h4>Industrial Automation</h4>
+                    <p>Every plant is different. Deliver custom control software without rewriting your core framework each time.</p>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-icon">🤖</div>
+                    <h4>Robotics & Mechatronics</h4>
+                    <p>Adapt motion control, sensor fusion, and safety logic to each physical deployment seamlessly.</p>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-icon">⚡</div>
+                    <h4>Energy & Utilities</h4>
+                    <p>Custom SCADA, grid management, and monitoring deployments — all from a single codebase.</p>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-icon">🏥</div>
+                    <h4>Medical Devices</h4>
+                    <p>Client-specific device software with full traceability back to the validated core.</p>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h4>12×</h4>
+                    <p>Faster client deployment</p>
+                </div>
+                <div class="stat-item">
+                    <h4>94%</h4>
+                    <p>Less specialist engineering hours</p>
+                </div>
+                <div class="stat-item">
+                    <h4>1</h4>
+                    <p>Codebase to maintain</p>
+                </div>
+                <div class="stat-item">
+                    <h4>∞</h4>
+                    <p>Clients you can serve</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Stop forking. Start scaling.</h2>
+                <p>Join the software teams delivering 10× more custom projects without 10× the headcount.</p>
+                <div class="cta-group">
+                    <button class="btn-primary modal-trigger">Start Building Free</button>
+                    <button class="btn-secondary modal-trigger">Talk to Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <div class="logo">
+                    <span class="logo-icon"></span>
+                    Plott Ai
+                </div>
+                <p class="footer-desc">The adaptation engine for modern software code.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h5>Product</h5>
+                    <a href="#">Platform</a>
+                    <a href="concept">How it works</a>
+                </div>
+                <div class="footer-col">
+                    <h5>We</h5>
+                    <a href="#">About</a>
+                    <a href="mailto:talk@plottai.com">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>&copy; 2026 Plott AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Beta Modal -->
+    <div class="modal-overlay" id="betaModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose" aria-label="Close">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="modal-badge">Early Access Program</div>
+            <div class="modal-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/>
+                </svg>
+            </div>
+            <h3>Plott AI is in Beta</h3>
+            <p class="modal-text">We are currently in beta testing, working closely with a select group of chosen clients to shape the future of adaptive software delivery.</p>
+            <p class="modal-text">If you are interested in becoming a pioneer and joining our early access program, reach out to us directly.</p>
+            <a href="mailto:talk@plottai.com" class="modal-email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                talk@plottai.com
+            </a>
+        </div>
     </div>
 
-    <div id="blazor-error-ui" style="position: relative; z-index: 2;">
-        An unhandled error has occurred.
-        <a href="." class="reload">Reload</a>
-        <span class="dismiss">🗙</span>
-    </div>
-    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
-    <script src="_framework/blazor.webassembly.66stpp682q.js"></script>
-    <script>navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' });</script>
-    <script src="js/starfield.js" defer></script>
+    <!-- Scripts -->
+    <script>
+        // Mouse tracking spotlight on cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.glass-card, .usecase-card, .problem-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+
+            // Subtle network graph background
+            const canvas = document.getElementById('networkCanvas');
+            const ctx = canvas.getContext('2d');
+            let nodes = [];
+            let animationId;
+
+            function resize() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+
+            function initNodes() {
+                nodes = [];
+                const count = Math.floor((canvas.width * canvas.height) / 25000);
+                for (let i = 0; i < count; i++) {
+                    nodes.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        vx: (Math.random() - 0.5) * 0.3,
+                        vy: (Math.random() - 0.5) * 0.3,
+                        r: Math.random() * 1.5 + 0.5
+                    });
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                for (let i = 0; i < nodes.length; i++) {
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const dx = nodes[i].x - nodes[j].x;
+                        const dy = nodes[i].y - nodes[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 140) {
+                            ctx.strokeStyle = `rgba(14, 165, 233, ${0.15 * (1 - dist / 140)})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.beginPath();
+                            ctx.moveTo(nodes[i].x, nodes[i].y);
+                            ctx.lineTo(nodes[j].x, nodes[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                nodes.forEach(n => {
+                    n.x += n.vx;
+                    n.y += n.vy;
+                    if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+                    if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+                    
+                    ctx.fillStyle = 'rgba(14, 165, 233, 0.5)';
+                    ctx.beginPath();
+                    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+
+                animationId = requestAnimationFrame(draw);
+            }
+
+            resize();
+            initNodes();
+            draw();
+            window.addEventListener('resize', () => {
+                resize();
+                initNodes();
+            });
+
+            // Modal Logic
+            const modal = document.getElementById('betaModal');
+            const modalClose = document.getElementById('modalClose');
+            const triggers = document.querySelectorAll('.modal-trigger');
+
+            const openModal = (e) => {
+                e.preventDefault();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', openModal);
+            });
+
+            modalClose.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>
