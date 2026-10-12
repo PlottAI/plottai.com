@@ -3,472 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plott Ai | The Last Mile AI for Code</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Plott Ai | Industrial Machine Intelligence Research</title>
+    <meta name="description" content="Redefining industrial automation through high-performance AI architectures.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <span class="logo-icon"></span>
-                Plott Ai
-            </div>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <span class="logo-mark"></span>
+                PLOTT AI
+            </a>
             <div class="nav-links">
-                <a href="#platform">Platform</a>
-                <a href="#concept">How it works</a>
-                <a href="#usecases">Use Cases</a>
-                <a href="#login" class="nav-btn modal-trigger">Login</a>
+                <a href="#research">Research</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#domains">Domains</a>
+                <button class="btn-text modal-trigger">Access Program</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero">
-        <div class="grid-bg"></div>
-        <canvas id="networkCanvas"></canvas>
-        
-        <div class="container hero-content">
-            <div class="badge">
-                <span class="pulse"></span>
-                <span class="badge-text">v1.1 rc1 • The Adaptation Engine</span>
-            </div>
-            <h1 class="hero-title">
-                The <span class="gradient-text">Last Mile</span> AI<br>for your Code & Beyond.
-            </h1>
-            <p class="hero-subtitle">
-                Your core codebase stays clean. Every client gets a perfect adaptation. Scale custom delivery without hiring more specialists.
-            </p>
-            <div class="cta-group">
-                <button class="btn-primary modal-trigger">
-                    Start Scaling
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8H12.66M12.66 8L8 3.33M12.66 8L8 12.66" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Diagram: The Concept -->
-        <div class="concept-diagram container">
-            <div class="diagram-label">The Adaptation Engine</div>
-            <div class="diagram-flow">
-                <div class="node node-source">
-                    <div class="node-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <span class="label">Status</span>
+                        <span class="value active">Research Active</span>
                     </div>
-                    <div class="node-label">Your Core<br>Codebase</div>
-                    <div class="node-sublabel">Single source of truth</div>
+                    <div class="meta-item">
+                        <span class="label">Focus</span>
+                        <span class="value">Industrial AI Stack</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="label">Ver</span>
+                        <span class="value">2.0 (Next Gen)</span>
+                    </div>
                 </div>
                 
-                <div class="connector">
-                    <div class="line"></div>
-                    <div class="connector-label">Plott AI</div>
-                    <div class="line"></div>
-                </div>
-                
-                <div class="node node-engine">
-                    <div class="node-icon glow">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6"/></svg>
-                    </div>
-                    <div class="node-label">Adaptation<br>Engine</div>
-                </div>
-                
-                <div class="connector">
-                    <div class="line"></div>
-                    <div class="connector-label">Deliver</div>
-                    <div class="line"></div>
-                </div>
-                
-                <div class="node-group">
-                    <div class="node node-client">
-                        <div class="node-label">Client A</div>
-                        <div class="node-sublabel">Industrial</div>
-                    </div>
-                    <div class="node node-client">
-                        <div class="node-label">Client B</div>
-                        <div class="node-sublabel">Robotics</div>
-                    </div>
-                    <div class="node node-client">
-                        <div class="node-label">Client C</div>
-                        <div class="node-sublabel">Automation</div>
+                <div class="hero-content">
+                    <h1 class="display-text">
+                        Redesigning the<br>
+                        <span class="outline-text">Machine Stack.</span>
+                    </h1>
+                    <p class="lead">
+                        We are a research lab building the next-generation architecture for industrial automation. 
+                        Combining deterministic low-latency control with adaptive AI intelligence.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn-primary modal-trigger">Join Early Access</button>
+                        <a href="#architecture" class="btn-link">View System Schematic ↓</a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- The Problem -->
-    <section class="problem">
+    <!-- Architecture / Animation Section -->
+    <section id="architecture" class="section section-dark">
         <div class="container">
-            <div class="section-header">
-                <span class="eyebrow">The Bottleneck</span>
-                <h2>Custom work doesn't scale.</h2>
-                <p class="section-desc">Every new client or product needs a custom version of your core software. Every project drains your best engineers. Your core codebase becomes a graveyard of client-specific hacks. And with AI-vibe coding it doesn’t get any better, it actually gets even worse.</p>
+            <div class="section-intro">
+                <span class="eyebrow">01 // System Architecture</span>
+                <h2>The New Standard Topology</h2>
+                <p>A departure from 30-year-old concepts. Centralized high-performance compute flanked by dedicated tensor units, orchestrating the field via deterministic fabric.</p>
             </div>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-number">01</div>
-                    <h4>The Fork Problem</h4>
-                    <p>Every client becomes a separate fork. Updates become nightmares. Bugs multiply across versions.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">02</div>
-                    <h4>The Specialist Trap</h4>
-                    <p>Only senior engineers understand the core. Junior staff can't deliver custom work without breaking things.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">03</div>
-                    <h4>The Scaling Wall</h4>
-                    <p>Growing means hiring more expensive specialists. Your margins compress with every new client.</p>
+
+            <div class="blueprint-container">
+                <div class="blueprint-label">FIG 1.0 — CONTROL CABINET SCHEMATIC</div>
+                
+                <!-- REDESIGNED SVG: Cleaner, Wireframe, Technical -->
+                <svg class="blueprint-svg" viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Grid Background -->
+                    <defs>
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                        </pattern>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                            <path d="M0,0 L0,6 L9,3 z" fill="#0ea5e9" />
+                        </marker>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+
+                    <!-- Cabinet Outline (Abstract) -->
+                    <rect x="100" y="50" width="700" height="500" rx="4" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4 4" />
+                    
+                    <!-- TOP ROW: COMPUTE CLUSTER -->
+                    <!-- HPC Core (Left-Center Bias) -->
+                    <g class="node-group" transform="translate(150, 100)">
+                        <rect width="240" height="120" fill="rgba(14, 165, 233, 0.05)" stroke="#0ea5e9" stroke-width="1.5" />
+                        <text x="20" y="30" fill="#0ea5e9" font-family="'Space Mono'" font-size="12">HPC_CORE // MAIN</text>
+                        <rect x="20" y="50" width="200" height="40" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.1)" />
+                        <!-- Animated Waveform inside -->
+                        <path class="wave-path" d="M20 70 Q 40 50, 60 70 T 100 70 T 140 70 T 180 70 T 220 70" stroke="#0ea5e9" stroke-width="1.5" fill="none" />
+                        <circle cx="220" cy="20" r="3" fill="#0ea5e9" class="blink" />
+                    </g>
+
+                    <!-- AI Accel 01 -->
+                    <g class="node-group" transform="translate(430, 110)">
+                        <rect width="140" height="100" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.3)" />
+                        <text x="15" y="25" fill="white" font-family="'Space Mono'" font-size="10">GPU_TENSOR_01</text>
+                        <line x1="15" y1="40" x2="125" y2="40" stroke="rgba(255,255,255,0.1)" />
+                        <rect x="15" y="55" width="20" height="20" fill="rgba(255,255,255,0.1)" />
+                        <rect x="45" y="55" width="20" height="20" fill="rgba(255,255,255,0.1)" />
+                        <rect x="75" y="55" width="20" height="20" fill="rgba(255,255,255,0.1)" />
+                    </g>
+
+                    <!-- AI Accel 02 -->
+                    <g class="node-group" transform="translate(610, 110)">
+                        <rect width="140" height="100" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.3)" />
+                        <text x="15" y="25" fill="white" font-family="'Space Mono'" font-size="10">GPU_TENSOR_02</text>
+                        <line x1="15" y1="40" x2="125" y2="40" stroke="rgba(255,255,255,0.1)" />
+                        <rect x="15" y="55" width="20" height="20" fill="rgba(255,255,255,0.1)" />
+                        <rect x="45" y="55" width="20" height="20" fill="rgba(255,255,255,0.1)" />
+                        <rect x="75" y="55" width="20" height="20" fill="rgba(255,255,255,0.1)" />
+                    </g>
+
+                    <!-- Interconnects (Top) -->
+                    <path d="M390 160 L430 160" stroke="white" stroke-width="1" />
+                    <path d="M570 160 L610 160" stroke="white" stroke-width="1" />
+                    
+                    <!-- Data Flow Particles (Top) -->
+                    <circle r="2" fill="white"><animateMotion dur="2s" repeatCount="indefinite" path="M390 160 L430 160" /></circle>
+                    <circle r="2" fill="white"><animateMotion dur="2s" begin="1s" repeatCount="indefinite" path="M570 160 L610 160" /></circle>
+
+
+                    <!-- MID ROW: SWITCH FABRIC -->
+                    <line x1="150" y1="300" x2="750" y2="300" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+                    <text x="150" y="290" fill="rgba(255,255,255,0.4)" font-family="'Space Mono'" font-size="10">HP_BUS // Network</text>
+
+                    <!-- Vertical Drop from HPC -->
+                    <path d="M270 220 L270 300" stroke="#0ea5e9" stroke-width="1.5" />
+                    <circle r="3" fill="#0ea5e9"><animateMotion dur="1.5s" repeatCount="indefinite" path="M270 220 L270 300" /></circle>
+
+                    <!-- Switch Nodes -->
+                    <g transform="translate(180, 320)">
+                        <rect width="80" height="60" stroke="rgba(255,255,255,0.3)" fill="none" />
+                        <text x="10" y="20" fill="white" font-family="'Space Mono'" font-size="9">SW_01</text>
+                        <circle cx="65" cy="15" r="2" fill="#10b981" class="blink-fast" />
+                    </g>
+                    <g transform="translate(340, 320)">
+                        <rect width="80" height="60" stroke="rgba(255,255,255,0.3)" fill="none" />
+                        <text x="10" y="20" fill="white" font-family="'Space Mono'" font-size="9">SW_02</text>
+                        <circle cx="65" cy="15" r="2" fill="#10b981" class="blink-fast" style="animation-delay: 0.2s"/>
+                    </g>
+                    <g transform="translate(500, 320)">
+                        <rect width="80" height="60" stroke="rgba(255,255,255,0.3)" fill="none" />
+                        <text x="10" y="20" fill="white" font-family="'Space Mono'" font-size="9">SW_03</text>
+                        <circle cx="65" cy="15" r="2" fill="#10b981" class="blink-fast" style="animation-delay: 0.4s"/>
+                    </g>
+                    <g transform="translate(660, 320)">
+                        <rect width="80" height="60" stroke="rgba(255,255,255,0.3)" fill="none" />
+                        <text x="10" y="20" fill="white" font-family="'Space Mono'" font-size="9">SW_04</text>
+                        <circle cx="65" cy="15" r="2" fill="#10b981" class="blink-fast" style="animation-delay: 0.6s"/>
+                    </g>
+
+                    <!-- Connections Bus -> Switches -->
+                    <path d="M220 300 L220 320 M380 300 L380 320 M540 300 L540 320 M700 300 L700 320" stroke="rgba(255,255,255,0.3)" stroke-width="1" />
+
+
+                    <!-- BOTTOM ROW: FIELD DEVICES -->
+                    <g transform="translate(180, 460)">
+                        <rect width="80" height="60" stroke="rgba(255,255,255,0.1)" fill="rgba(255,255,255,0.02)" />
+                        <text x="40" y="35" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'Space Mono'" font-size="10">Device_A</text>
+                    </g>
+                    <g transform="translate(340, 460)">
+                        <rect width="80" height="60" stroke="rgba(255,255,255,0.1)" fill="rgba(255,255,255,0.02)" />
+                        <text x="40" y="35" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'Space Mono'" font-size="10">Device_B</text>
+                    </g>
+                    <g transform="translate(500, 460)">
+                        <rect width="80" height="60" stroke="rgba(255,255,255,0.1)" fill="rgba(255,255,255,0.02)" />
+                        <text x="40" y="35" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'Space Mono'" font-size="10">Sensor_C</text>
+                    </g>
+                    <g transform="translate(660, 460)">
+                        <rect width="80" height="60" stroke="rgba(255,255,255,0.1)" fill="rgba(255,255,255,0.02)" />
+                        <text x="40" y="35" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'Space Mono'" font-size="10">Actuator_D</text>
+                    </g>
+
+                    <!-- Connections Switches -> Machines -->
+                    <path d="M220 380 L220 460 M380 380 L380 460 M540 380 L540 460 M700 380 L700 460" stroke="rgba(255,255,255,0.1)" stroke-dasharray="2 2" />
+                    
+                    <!-- Return Flow (Green) -->
+                    <circle r="2" fill="#10b981"><animateMotion dur="3s" repeatCount="indefinite" path="M380 460 L380 380 L380 300 L270 300 L270 220" /></circle>
+
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Strip -->
+    <section class="ticker-section">
+        <div class="container">
+            <div class="ticker-wrap">
+                <div class="ticker-label">TEAM EXPERIENCE IN:</div>
+                <div class="ticker-window">
+                    <div class="ticker-items">
+                        <span>SOLAR CELL PRODUCTION</span> • 
+                        <span>SEMICONDUCTOR FABRICATION [CPU / GPU]</span> • 
+                        <span>MOBILITY PARTS ASSEMBLY</span> • 
+                        <span>FOOD PROCESSING</span> •
+ 			<span>ENERGY PRODUCTION & CONTROL</span> •
+                        <!-- Duplikat für nahtlosen Loop -->
+                        <span>SOLAR CELL PRODUCTION</span> • 
+                        <span>SEMICONDUCTOR FABRICATION [CPU / GPU]</span> • 
+                        <span>MOBILITY PARTS ASSEMBLY</span> • 
+                        <span>FOOD PROCESSING</span> •
+ 			<span>ENERGY PRODUCTION & CONTROL</span> •
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="platform" class="features">
+
+    <!-- Problem/Solution Grid -->
+    <section id="research" class="section">
         <div class="container">
-            <div class="section-header">
-                <span class="eyebrow">The Platform</span>
-                <h2>One codebase.<br>Unlimited adaptations.</h2>
-                <p class="section-desc">Plott sits between your core repo and your client deployments. AI understands your architecture and generates client-specific code — while your master stays clean and up to date.</p>
-            </div>
-
-            <div class="card-grid">
-                <div class="glass-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
-                    </div>
-                    <h3>Intelligent Adaptation</h3>
-                    <p>Our AI reads your core codebase, understands the domain, and generates precise adaptations for each client's unique requirements — without modifying the source.</p>
+            <div class="split-grid">
+                <div class="split-col">
+                    <span class="eyebrow">02 // The Research Gap</span>
+                    <h2>Deterministic Limits vs.<br>Cognitive Control</h2>
                 </div>
-
-                <div class="glass-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M9 12l2 2 4-4"/></svg>
-                    </div>
-                    <h3>Seamless Core Updates</h3>
-                    <p>Push an update to your core? Plott automatically propagates it to client deployment, resolving conflicts intelligently. No manual merges.</p>
-                </div>
-
-                <div class="glass-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-                    </div>
-                    <h3>Empower Non-Specialists</h3>
-                    <p>Your project managers and junior devs can now spin up complex client deployments. The AI handles the domain complexity; they handle the client relationship.</p>
-                </div>
-
-                <div class="glass-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                    </div>
-                    <h3>Vertical Model</h3>
-                    <p>Your team doesn't have to be domain experts to deliver top-notch solutions.</p>
-                </div>
-
-                <div class="glass-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    </div>
-                    <h3>The Integration Concept</h3>
-                    <p>Define appropriate extensions to your core code system with standard procedure and ensure clean integration. All underlined with Ai.</p>
-                </div>
-
-                <!-- NEW 6th Card -->
-                <div class="glass-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/></svg>
-                    </div>
-                    <h3>...And Beyond</h3>
-                    <p>Go beyond source code. Extend your adaptation engine to configuration, documentation, deployment pipelines, and operational knowledge. All adapted alongside your core.</p>
-                </div>
-    </section>
-
-    <!-- How it works -->
-    <section id="concept" class="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <span class="eyebrow">How it works</span>
-                <h2>From request to deployment<br>in minutes, not months.</h2>
-            </div>
-            
-            <div class="terminal container">
-                <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <span class="terminal-title">Plott Ai | Code</span>
-                </div>
-                <div class="terminal-body">
-                    <p><span class="prompt">@status</span> <span class="cmd">Plott adapt</span> --client "siemens_machine_07" --specs ./code</p>
-                    <p class="output">> Wait for product fineadjustment spec's...</p>
-                    <p class="output">> Mapping to core codebase (v4.2.1-stable)...</p>
-                    <p class="output">> Generating adaptation layer for hmi and plc endpoints...</p>
-                    <p class="output success">> Adaptation compiled. 0 conflicts.</p>
-                    <p class="output highlight">> Deployed to staging. Review link -> git repo: project fab1/cell55<span class="cursor">|</span></p>
-                </div>
-            </div>
-            
-            <div class="workflow-steps">
-                <div class="step">
-                    <div class="step-num">01</div>
-                    <h4>Define the client scope</h4>
-                    <p>Upload specs, describe requirements in plain language, or connect to your project management tool.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">02</div>
-                    <h4>AI generates the adaptation</h4>
-                    <p>Plott analyzes your core code and produces a precise, reviewable adaptation layer for the client.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">03</div>
-                    <h4>Deploy with confidence</h4>
-                    <p>Ship to the client. Core updates propagate automatically. The AI resolves future conflicts for you.</p>
+                <div class="split-col">
+                    <p class="body-text">
+                        Current industrial systems rely on architectures defined three decades ago. They are rigid and siloed, restricting AI to passive monitoring rather than unlocking its adaptive potential directly within the active control loop.
+                    </p>
+                    <ul class="tech-list">
+                        <li>
+                            <strong>The Old Way:</strong> Rigid, pre-programmed logic loops. AI is isolated as an afterthought, blind to real-time execution.
+                        </li>
+                        <li>
+                            <strong>The Plott Way:</strong> Unified next-generation architecture. Continuous cognitive reasoning embedded natively inside the deterministic control loop.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Use Cases / Stats -->
-    <section id="usecases" class="usecases">
+    <!-- Domains -->
+    <section id="domains" class="section">
         <div class="container">
-            <div class="section-header">
-                <span class="eyebrow">Where it shines</span>
-                <h2>Built for complexity.<br>Designed for scale.</h2>
-                <p class="section-desc">The more client-specific your work, the more value Plott unlocks.</p>
-            </div>
-            
-            <div class="usecase-grid">
-                <div class="usecase-card">
-                    <div class="usecase-icon">🏭</div>
-                    <h4>Industrial Automation</h4>
-                    <p>Every plant is different. Deliver custom control software without rewriting your core framework each time.</p>
-                </div>
-                <div class="usecase-card">
-                    <div class="usecase-icon">🤖</div>
-                    <h4>Robotics & Mechatronics</h4>
-                    <p>Adapt motion control, sensor fusion, and safety logic to each physical deployment seamlessly.</p>
-                </div>
-                <div class="usecase-card">
-                    <div class="usecase-icon">⚡</div>
-                    <h4>Energy & Utilities</h4>
-                    <p>Custom SCADA, grid management, and monitoring deployments — all from a single codebase.</p>
-                </div>
-                <div class="usecase-card">
-                    <div class="usecase-icon">🏥</div>
-                    <h4>Medical Devices</h4>
-                    <p>Client-specific device software with full traceability back to the validated core.</p>
-                </div>
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h4>12×</h4>
-                    <p>Faster client deployment</p>
-                </div>
-                <div class="stat-item">
-                    <h4>94%</h4>
-                    <p>Less specialist engineering hours</p>
-                </div>
-                <div class="stat-item">
-                    <h4>1</h4>
-                    <p>Codebase to maintain</p>
-                </div>
-                <div class="stat-item">
-                    <h4>∞</h4>
-                    <p>Clients you can serve</p>
-                </div>
+            <div class="cards-grid">
+                <article class="card-minimal">
+                    <div class="card-num">01</div>
+                    <h3>Semiconductors</h3>
+                    <p>Nanometer precision enhanced by cognitive error-prediction models that adaptively self-correct variations before they happen.</p>
+                </article>
+                <article class="card-minimal">
+                    <div class="card-num">02</div>
+                    <h3>Mobility</h3>
+                    <p>Truly autonomous production environments where the control loop understands product variations and self-reconfigures dynamically.</p>
+                </article>
+                <article class="card-minimal">
+                    <div class="card-num">03</div>
+                    <h3>Energy</h3>
+                    <p>Intelligent grid synchronization driven by autonomous decision-making loops that dynamically optimize stability under volatile conditions.</p>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="final-cta">
-        <div class="container">
-            <div class="cta-box">
-                <h2>Stop forking. Start scaling.</h2>
-                <p>Join the software teams delivering 10× more custom projects without 10× the headcount.</p>
-                <div class="cta-group">
-                    <button class="btn-primary modal-trigger">Start Building Free</button>
-                    <button class="btn-secondary modal-trigger">Talk to Sales</button>
-                </div>
-            </div>
+    <section class="section cta-section">
+        <div class="container center-text">
+            <h2 class="large-heading">Ready to architect<br>the next decade?</h2>
+            <p class="mb-2">We are selecting partners for our Q4 deployment cycle.</p>
+            <button class="btn-primary modal-trigger">Request Access</button>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-left">
-                <div class="logo">
-                    <span class="logo-icon"></span>
-                    Plott Ai
-                </div>
-                <p class="footer-desc">The adaptation engine for modern software code.</p>
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="logo">PLOTT AI</span>
+                <p class="small">Industrial Intelligence Research Lab.</p>
             </div>
             <div class="footer-links">
-                <div class="footer-col">
-                    <h5>Product</h5>
-                    <a href="#">Platform</a>
-                    <a href="concept">How it works</a>
-                </div>
-                <div class="footer-col">
-                    <h5>We</h5>
-                    <a href="#">About</a>
-                    <a href="mailto:talk@plottai.com">Contact</a>
-                </div>
+                <a href="#">System</a>
+                <a href="#">Research</a>
+                <a href="#">Contact</a>
             </div>
-        </div>
-        <div class="container copyright">
-            <p>&copy; 2026 Plott AI. All rights reserved.</p>
+            <div class="copyright">© 2026 Plott AI Labs.</div>
         </div>
     </footer>
 
-    <!-- Beta Modal -->
-    <div class="modal-overlay" id="betaModal">
+    <!-- Modal -->
+    <div class="modal-overlay" id="earlyAccessModal">
         <div class="modal">
-            <button class="modal-close" id="modalClose" aria-label="Close">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 6L6 18M6 6l12 12"/>
-                </svg>
-            </button>
-            <div class="modal-badge">Early Access Program</div>
-            <div class="modal-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/>
-                </svg>
-            </div>
-            <h3>Plott AI is in Beta</h3>
-            <p class="modal-text">We are currently in beta testing, working closely with a select group of chosen clients to shape the future of adaptive software delivery.</p>
-            <p class="modal-text">If you are interested in becoming a pioneer and joining our early access program, reach out to us directly.</p>
-            <a href="mailto:talk@plottai.com" class="modal-email">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                talk@plottai.com
-            </a>
+            <button class="modal-close modal-trigger">×</button>
+            <h3>Early Access Program</h3>
+            <p>We work directly with engineering leaders to deploy the new stack.</p>
+            <a href="mailto:v.carlucci@hotmail.com" class="email-link">v.carlucci@hotmail.com</a>
         </div>
     </div>
 
-    <!-- Scripts -->
     <script>
-        // Mouse tracking spotlight on cards
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.glass-card, .usecase-card, .problem-card');
-            
-            cards.forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    card.style.setProperty('--mouse-x', `${x}px`);
-                    card.style.setProperty('--mouse-y', `${y}px`);
-                });
-            });
+        // Simple Modal Logic
+        const triggers = document.querySelectorAll('.modal-trigger');
+        const overlay = document.getElementById('earlyAccessModal');
+        
+        triggers.forEach(t => t.addEventListener('click', (e) => {
+            e.preventDefault();
+            overlay.classList.toggle('active');
+        }));
 
-            // Subtle network graph background
-            const canvas = document.getElementById('networkCanvas');
-            const ctx = canvas.getContext('2d');
-            let nodes = [];
-            let animationId;
-
-            function resize() {
-                canvas.width = canvas.offsetWidth;
-                canvas.height = canvas.offsetHeight;
-            }
-
-            function initNodes() {
-                nodes = [];
-                const count = Math.floor((canvas.width * canvas.height) / 25000);
-                for (let i = 0; i < count; i++) {
-                    nodes.push({
-                        x: Math.random() * canvas.width,
-                        y: Math.random() * canvas.height,
-                        vx: (Math.random() - 0.5) * 0.3,
-                        vy: (Math.random() - 0.5) * 0.3,
-                        r: Math.random() * 1.5 + 0.5
-                    });
-                }
-            }
-
-            function draw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                for (let i = 0; i < nodes.length; i++) {
-                    for (let j = i + 1; j < nodes.length; j++) {
-                        const dx = nodes[i].x - nodes[j].x;
-                        const dy = nodes[i].y - nodes[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < 140) {
-                            ctx.strokeStyle = `rgba(14, 165, 233, ${0.15 * (1 - dist / 140)})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.beginPath();
-                            ctx.moveTo(nodes[i].x, nodes[i].y);
-                            ctx.lineTo(nodes[j].x, nodes[j].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-
-                nodes.forEach(n => {
-                    n.x += n.vx;
-                    n.y += n.vy;
-                    if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
-                    if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
-                    
-                    ctx.fillStyle = 'rgba(14, 165, 233, 0.5)';
-                    ctx.beginPath();
-                    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-                    ctx.fill();
-                });
-
-                animationId = requestAnimationFrame(draw);
-            }
-
-            resize();
-            initNodes();
-            draw();
-            window.addEventListener('resize', () => {
-                resize();
-                initNodes();
-            });
-
-            // Modal Logic
-            const modal = document.getElementById('betaModal');
-            const modalClose = document.getElementById('modalClose');
-            const triggers = document.querySelectorAll('.modal-trigger');
-
-            const openModal = (e) => {
-                e.preventDefault();
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            };
-
-            const closeModal = () => {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            };
-
-            triggers.forEach(trigger => {
-                trigger.addEventListener('click', openModal);
-            });
-
-            modalClose.addEventListener('click', closeModal);
-
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) closeModal();
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && modal.classList.contains('active')) {
-                    closeModal();
-                }
-            });
+        overlay.addEventListener('click', (e) => {
+            if(e.target === overlay) overlay.classList.remove('active');
         });
     </script>
 </body>
